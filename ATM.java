@@ -2,11 +2,9 @@ import java.util.Scanner;
 
 public class ATM {
     public static void main(String[] args) {
-        int balance = 50000;
+        int balance = 0;
         String lastTransaction = "No transactions made";
         Scanner sc = new Scanner(System.in);
-
-        // Step 1: User registers account number and PIN
         System.out.println("----- Register your Account -----");
         System.out.print("Set your Account Number: ");
         int registeredAccountNumber = sc.nextInt();
@@ -15,8 +13,6 @@ public class ATM {
         int registeredPin = sc.nextInt();
 
         System.out.println("\nRegistration successful!\n");
-
-        // Step 2: User login
         System.out.println("----- Login to your Account -----");
         System.out.print("Enter your Account Number: ");
         int enteredAccountNumber = sc.nextInt();
@@ -24,7 +20,6 @@ public class ATM {
         System.out.print("Enter your PIN: ");
         int enteredPin = sc.nextInt();
 
-        // Check credentials
         if (enteredAccountNumber != registeredAccountNumber || enteredPin != registeredPin) {
             System.out.println("Access denied. Incorrect Account Number or PIN.");
             return;
@@ -32,7 +27,6 @@ public class ATM {
 
         System.out.println("Login successful! Welcome!");
 
-        // Step 3: Show ATM menu
         while (true) {
             System.out.println("\n1. Withdraw Cash");
             System.out.println("2. Deposit Cash");
@@ -89,4 +83,3 @@ public class ATM {
         }
     }
 }
-
